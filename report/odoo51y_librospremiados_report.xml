@@ -1,0 +1,30 @@
+<odoo>
+    <record id="odoo51y.librospremiados_report" model="ir.actions.report">
+        <field name="name"> Informe de libros premiados</field>
+        <field name="model">odoo51y.librospremiados</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo51y.librospremiados_report_view</field>
+        <field name="report_file">odoo51y.librospremiados_report</field>
+        <field name="binding_model_id" ref="model_odoo51y_librospremiados"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="librospremiados_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Libros premiados</h1><br />
+                <t t-foreach="docs" t-as="librospremiados">
+                    <ul>
+                        <li>    id <span t-field="librospremiados.name" /></li>
+                        <li>    Premio <span t-field="librospremiados.nombre_premio" /></li>
+                        <li>    libro <span t-field="librospremiados.libro" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

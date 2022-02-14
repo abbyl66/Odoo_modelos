@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+          <record id="object0" model="odoo51y.modelo51y">
+            <field name="name">1</field>
+            <field name="titulo">EL día que dejó de nevar en Alaska</field>
+          </record>
+
+        <record id="object0" model="odoo51y.autores51y">
+            <field name="name">1</field>
+            <field name="nombre">Alice Kellen</field>
+            <field name="pais_Nacimiento">Estados Unidos</field>
+        </record>
+
+        <record id="object0" model="odoo51y.editoriales51y">
+            <field name="name">1</field>
+            <field name="nombre">Titania</field>
+            <field name="fundador">Joseph Jackson</field>
+            <field name="pais">Estados Unidos</field>
+        </record>
+
+        <record id="object0" model="odoo51y.generos">
+            <field name="name">1</field>
+            <field name="genero">Juvenil</field>
+        </record>
+
+        <record id="object0" model="odoo51y.librosgratis">
+            <field name="name">1</field>
+            <field name="gratis">Es gratis</field>
+        </record>
+
+        <record id="object0" model="odoo51y.librospago">
+            <field name="name">1</field>
+            <field name="precio">Diez euros</field>
+        </record>
+
+        <record id="object0" model="odoo51y.librospremiados">
+            <field name="name">1</field>
+            <field name="nombre_premio">Premio planeta</field>
+        </record>
+
+        <record id="object0" model="odoo51y.librosvendidos">
+            <field name="name">1</field>
+            <field name="anio">2020</field>
+        </record>
+
+        <record id="object0" model="odoo51y.sagas">
+            <field name="name">1</field>
+            <field name="saga">Harry Potter</field>
+        </record>
+
+        <record id="object0" model="odoo51y.trilogias">
+            <field name="name">1</field>
+            <field name="trilogia">Ciudad blanca</field>
+        </record>
+
+    </data>
+</odoo>

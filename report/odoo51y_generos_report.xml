@@ -1,0 +1,30 @@
+<odoo>
+    <record id="odoo51y.generos_report" model="ir.actions.report">
+        <field name="name"> Informe de generos</field>
+        <field name="model">odoo51y.generos</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo51y.generos_report_view</field>
+        <field name="report_file">odoo51y.generos_report</field>
+        <field name="binding_model_id" ref="model_odoo51y_generos"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="generos_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Generos </h1><br />
+                <t t-foreach="docs" t-as="generos">
+                    <ul>
+                        <li>    id <span t-field="generos.name" /></li>
+                        <li>    nombre <span t-field="generos.genero" /></li>
+                        <li>    libro <span t-field="generos.libro" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

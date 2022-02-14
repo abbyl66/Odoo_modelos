@@ -1,0 +1,38 @@
+<odoo>
+    <record id="odoo51y.modelo51y_report" model="ir.actions.report">
+        <field name="name"> Informe de libros</field>
+        <field name="model">odoo51y.modelo51y</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo51y.modelo51y_report_view</field>
+        <field name="report_file">odoo51y.modelo51y_report</field>
+        <field name="binding_model_id" ref="model_odoo51y_modelo51y"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="modelo51y_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Libros </h1><br />
+                <t t-foreach="docs" t-as="modelo51y">
+                    <ul>
+                        <li>    id <span t-field="modelo51y.name" /></li>
+                        <li>    titulo <span t-field="modelo51y.titulo" /></li>
+                        <li>    autor <span t-field="modelo51y.autor" /></li>
+                        <li>    Editorial <span t-field="modelo51y.editorial" /></li>
+                        <li>    Género<span t-field="modelo51y.genero" /></li>
+                        <li>    Premios<span t-field="modelo51y.premios" /></li>
+                        <li>    Precio<span t-field="modelo51y.precio" /></li>
+                        <li>    Gratis<span t-field="modelo51y.gratis" /></li>
+                        <li>    Popular<span t-field="modelo51y.popular" /></li>
+                        <li>    Saga<span t-field="modelo51y.saga" /></li>
+                        <li>    Trilogía<span t-field="modelo51y.trilogia" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

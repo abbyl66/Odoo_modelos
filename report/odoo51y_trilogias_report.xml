@@ -1,0 +1,30 @@
+<odoo>
+    <record id="odoo51y.trilogias_report" model="ir.actions.report">
+        <field name="name"> Informe de trilogias</field>
+        <field name="model">odoo51y.trilogias</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo51y.trilogias_report_view</field>
+        <field name="report_file">odoo51y.trilogias_report</field>
+        <field name="binding_model_id" ref="model_odoo51y_trilogias"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="trilogias_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Trilogias</h1><br />
+                <t t-foreach="docs" t-as="trilogias">
+                    <ul>
+                        <li>    id <span t-field="trilogias.name" /></li>
+                        <li>    nombre <span t-field="trilogias.trilogia" /></li>
+                        <li>    Libro <span t-field="trilogias.libro" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

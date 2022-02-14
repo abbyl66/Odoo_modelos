@@ -1,0 +1,29 @@
+<odoo>
+    <record id="odoo51y.sagas_report" model="ir.actions.report">
+        <field name="name"> Informe de sagas</field>
+        <field name="model">odoo51y.sagas</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo51y.sagas_report_view</field>
+        <field name="report_file">odoo51y.sagas_report</field>
+        <field name="binding_model_id" ref="model_odoo51y_sagas"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="sagas_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>Sagas</h1><br />
+                <t t-foreach="docs" t-as="sagas">
+                    <ul>
+                        <li>    id <span t-field="sagas.name" /></li>
+                        <li>    nombre <span t-field="sagas.saga" /></li>
+                        <li>    Libro <span t-field="sagas.libro" /></li>
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
